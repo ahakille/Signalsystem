@@ -51,16 +51,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Arial", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(59, 82);
+            this.label1.Location = new System.Drawing.Point(40, 80);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(422, 45);
+            this.label1.Size = new System.Drawing.Size(424, 47);
             this.label1.TabIndex = 1;
             this.label1.Text = "Gregers Signalsystem";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(341, 267);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 17);
@@ -71,7 +74,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.BackColor = System.Drawing.Color.Black;
+            this.BackgroundImage = global::Signalsystem.Properties.Resources.railway_908277_960_720;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(516, 326);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

@@ -73,6 +73,16 @@ namespace Signalsystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap railway_908277_960_720 {
+            get {
+                object obj = ResourceManager.GetObject("railway-908277_960_720", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Växelhöger {
             get {
                 object obj = ResourceManager.GetObject("Växelhöger", resourceCulture);

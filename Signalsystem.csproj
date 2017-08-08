@@ -103,6 +103,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="inställningar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inställningar.Designer.cs">
+      <DependentUpon>inställningar.cs</DependentUpon>
+    </Compile>
     <Compile Include="options.cs" />
     <Compile Include="Railmap.cs">
       <SubType>Form</SubType>
@@ -118,6 +124,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="inställningar.resx">
+      <DependentUpon>inställningar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Railmap.resx">
       <DependentUpon>Railmap.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="options.xml" />
+    <None Include="Resources\railway-908277_960_720.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

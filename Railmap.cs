@@ -28,28 +28,49 @@ namespace Signalsystem
         bool vxl7;
         bool vxl8;
         bool vxl9;
+        int time;
 
         public Railmap()
         {
             Thread t = new Thread(new ThreadStart(splashstart));
             t.Start();
-            Start(); 
+            bool check;
+            string message;
+            Start(out check, out message); 
             t.Abort();
             InitializeComponent();
-        //    label16.Text = "|\n|\n|\n|\n|\n|\n|\n|\n";
+            if (check)
+            {
+                Error(message);
+            }
+            
+      
         }
         private void splashstart()
         {
             Application.Run(new Start());
         }
+        private void Error(string message)
+        {
+            MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            Btnvxl1.Enabled = false;
+            Btnvxl2.Enabled = false;
+            Btnvxl3.Enabled = false;
+            Btnvxl4.Enabled = false;
+            Btnvxl5.Enabled = false;
+            Btnvxl6.Enabled = false;
+            Btnvxl7.Enabled = false;
+            Btnvxl8.Enabled = false;
+            Btnvxl9.Enabled = false;
+        }
         private void Change(int nummer)
         {
             byte b = Convert.ToByte(nummer);
             driver.Send(new DigitalWriteRequest(b, ArduinoDriver.DigitalValue.High));
-            Task.Delay(300).Wait();
+            Task.Delay(time).Wait();
             driver.Send(new DigitalWriteRequest(b, ArduinoDriver.DigitalValue.Low));
         }
-        private void Start()
+        private void Start(out bool check , out string message)
         {
             vxl1 = false;
             vxl2 = false;
@@ -61,25 +82,41 @@ namespace Signalsystem
             vxl8 = false;
             vxl9 = false;
             options options = new options();
-            string port = options.XmltoString();
-            driver = new ArduinoDriver.ArduinoDriver(ArduinoModel.UnoR3, "COM3", true);
-            for (int i = 1; i < 14; i++)
+            string port = options.XmltoString("port");
+            time = Convert.ToInt16(options.XmltoString("time"));
+            try
             {
-                byte b = Convert.ToByte(i);
-                driver.Send(new DigitalWriteRequest(b, ArduinoDriver.DigitalValue.High));
-                driver.Send(new AnalogWriteRequest(b, 1));
-                driver.Send(new DigitalWriteRequest(b, ArduinoDriver.DigitalValue.Low));
+                driver = new ArduinoDriver.ArduinoDriver(ArduinoModel.UnoR3, port, true);
+                for (int i = 1; i < 14; i++)
+                {
+                    byte b = Convert.ToByte(i);
+                    driver.Send(new DigitalWriteRequest(b, ArduinoDriver.DigitalValue.High));
+                    driver.Send(new AnalogWriteRequest(b, 1));
+                    driver.Send(new DigitalWriteRequest(b, ArduinoDriver.DigitalValue.Low));
+                }
+                for (int i = 1; i < 14; i++)
+                {
+
+                    byte b = Convert.ToByte(i);
+                    driver.Send(new DigitalWriteRequest(b, ArduinoDriver.DigitalValue.High));
+                    Task.Delay(300).Wait();
+                    driver.Send(new DigitalWriteRequest(b, ArduinoDriver.DigitalValue.Low));
+                    i++;
+
+                }
+                message = "";
+                check = false;
+                
             }
-            for (int i = 1; i < 14; i++)
+            catch (Exception dv)
             {
-
-                byte b = Convert.ToByte(i);
-                driver.Send(new DigitalWriteRequest(b, ArduinoDriver.DigitalValue.High));
-                Task.Delay(300).Wait();
-                driver.Send(new DigitalWriteRequest(b, ArduinoDriver.DigitalValue.Low));
-                i++;
-
+                Task.Delay(4000).Wait();
+                message = dv.Message;
+                check = true;
+               
             }
+            
+            
         }
         private void Btnvxl1_Click(object sender, EventArgs e)
         {
@@ -173,6 +210,27 @@ namespace Signalsystem
         private void avslutaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Btnvxl9_Click(object sender, EventArgs e)
+        {
+            if (vxl9)
+            {
+                Btnvxl9.Text = "|   |";
+                vxl9 = false;
+              //  Change(11);
+            }
+            else
+            {
+                Btnvxl9.Text = @"\ \";
+                vxl9 = true;
+             //   Change(12);
+            }
+        }
+
+        private void inställningarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

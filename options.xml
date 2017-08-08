@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <options>
   <port>
-    <name>COM3</name>
     <value>COM3</value>
   </port>
+  <time>
+    <value>300</value>
+  </time>
 </options>
