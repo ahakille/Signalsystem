@@ -41,9 +41,9 @@
             this.avslutaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inställningarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startaOmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inställningarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.hjälpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.omToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inställningarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Btnvxl9 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -167,9 +167,16 @@
             // startaOmToolStripMenuItem
             // 
             this.startaOmToolStripMenuItem.Name = "startaOmToolStripMenuItem";
-            this.startaOmToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.startaOmToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
             this.startaOmToolStripMenuItem.Text = "Starta om ";
             this.startaOmToolStripMenuItem.Click += new System.EventHandler(this.startaOmToolStripMenuItem_Click);
+            // 
+            // inställningarToolStripMenuItem1
+            // 
+            this.inställningarToolStripMenuItem1.Name = "inställningarToolStripMenuItem1";
+            this.inställningarToolStripMenuItem1.Size = new System.Drawing.Size(165, 26);
+            this.inställningarToolStripMenuItem1.Text = "Inställningar";
+            this.inställningarToolStripMenuItem1.Click += new System.EventHandler(this.inställningarToolStripMenuItem1_Click);
             // 
             // hjälpToolStripMenuItem
             // 
@@ -185,13 +192,6 @@
             this.omToolStripMenuItem.Size = new System.Drawing.Size(108, 26);
             this.omToolStripMenuItem.Text = "Om";
             this.omToolStripMenuItem.Click += new System.EventHandler(this.omToolStripMenuItem_Click);
-            // 
-            // inställningarToolStripMenuItem1
-            // 
-            this.inställningarToolStripMenuItem1.Name = "inställningarToolStripMenuItem1";
-            this.inställningarToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
-            this.inställningarToolStripMenuItem1.Text = "Inställningar";
-            this.inställningarToolStripMenuItem1.Click += new System.EventHandler(this.inställningarToolStripMenuItem1_Click);
             // 
             // pictureBox1
             // 
@@ -218,7 +218,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1081, 738);
+            this.ClientSize = new System.Drawing.Size(1081, 690);
             this.Controls.Add(this.Btnvxl9);
             this.Controls.Add(this.Btnvxl6);
             this.Controls.Add(this.Btnvxl7);

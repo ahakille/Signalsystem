@@ -38,13 +38,15 @@ namespace Signalsystem
             string message;
             Start(out check, out message); 
             t.Abort();
+            
             InitializeComponent();
             if (check)
             {
                 Error(message);
             }
             
-      
+
+
         }
         private void splashstart()
         {
@@ -86,7 +88,7 @@ namespace Signalsystem
             time = Convert.ToInt16(options.XmltoString("time"));
             try
             {
-                driver = new ArduinoDriver.ArduinoDriver(ArduinoModel.UnoR3, port, true);
+                driver = new ArduinoDriver.ArduinoDriver(ArduinoModel.Mega2560, port, true);
                 for (int i = 1; i < 14; i++)
                 {
                     byte b = Convert.ToByte(i);
@@ -218,13 +220,13 @@ namespace Signalsystem
             {
                 Btnvxl9.Text = "|   |";
                 vxl9 = false;
-              //  Change(11);
+                Change(11);
             }
             else
             {
                 Btnvxl9.Text = @"\ \";
                 vxl9 = true;
-             //   Change(12);
+                Change(12);
             }
         }
 
