@@ -32,16 +32,19 @@
             this.TxtPort = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnAbort = new System.Windows.Forms.Button();
+            this.txtTime = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnSave
             // 
-            this.BtnSave.Location = new System.Drawing.Point(41, 143);
+            this.BtnSave.Location = new System.Drawing.Point(38, 218);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(75, 23);
             this.BtnSave.TabIndex = 0;
             this.BtnSave.Text = "Spara";
             this.BtnSave.UseVisualStyleBackColor = true;
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // TxtPort
             // 
@@ -61,19 +64,38 @@
             // 
             // BtnAbort
             // 
-            this.BtnAbort.Location = new System.Drawing.Point(138, 143);
+            this.BtnAbort.Location = new System.Drawing.Point(135, 218);
             this.BtnAbort.Name = "BtnAbort";
             this.BtnAbort.Size = new System.Drawing.Size(75, 23);
             this.BtnAbort.TabIndex = 1;
             this.BtnAbort.Text = "Avbryt";
             this.BtnAbort.UseVisualStyleBackColor = true;
+            this.BtnAbort.Click += new System.EventHandler(this.BtnAbort_Click);
+            // 
+            // txtTime
+            // 
+            this.txtTime.Location = new System.Drawing.Point(38, 95);
+            this.txtTime.Name = "txtTime";
+            this.txtTime.Size = new System.Drawing.Size(100, 22);
+            this.txtTime.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(38, 76);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 17);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Tillkopplingstid";
             // 
             // inställningar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(252, 202);
+            this.ClientSize = new System.Drawing.Size(356, 272);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtTime);
             this.Controls.Add(this.TxtPort);
             this.Controls.Add(this.BtnAbort);
             this.Controls.Add(this.BtnSave);
@@ -91,5 +113,7 @@
         private System.Windows.Forms.TextBox TxtPort;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnAbort;
+        private System.Windows.Forms.TextBox txtTime;
+        private System.Windows.Forms.Label label2;
     }
 }

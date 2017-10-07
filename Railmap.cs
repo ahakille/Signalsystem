@@ -25,7 +25,7 @@ namespace Signalsystem
         bool vxl4;
         bool vxl5;
         bool vxl6;
-        bool vxl7;
+        int vxl7;
         bool vxl8;
         bool vxl9;
         int time;
@@ -80,7 +80,7 @@ namespace Signalsystem
             vxl4 = false;
             vxl5 = false;
             vxl6 = false;
-            vxl7 = false;
+            vxl7 = 1;
             vxl8 = false;
             vxl9 = false;
             options options = new options();
@@ -89,14 +89,14 @@ namespace Signalsystem
             try
             {
                 driver = new ArduinoDriver.ArduinoDriver(ArduinoModel.Mega2560, port, true);
-                for (int i = 1; i < 14; i++)
+                for (int i = 2; i < 23; i++)
                 {
                     byte b = Convert.ToByte(i);
                     driver.Send(new DigitalWriteRequest(b, ArduinoDriver.DigitalValue.High));
                     driver.Send(new AnalogWriteRequest(b, 1));
                     driver.Send(new DigitalWriteRequest(b, ArduinoDriver.DigitalValue.Low));
                 }
-                for (int i = 1; i < 14; i++)
+                for (int i = 2; i < 23; i++)
                 {
 
                     byte b = Convert.ToByte(i);
@@ -220,18 +220,75 @@ namespace Signalsystem
             {
                 Btnvxl9.Text = "|   |";
                 vxl9 = false;
-                Change(11);
+                Change(20);
             }
             else
             {
                 Btnvxl9.Text = @"\ \";
                 vxl9 = true;
-                Change(12);
+                Change(21);
             }
         }
 
         private void inställningarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            inställningar i = new inställningar();
+            i.ShowDialog();
+        }
+
+        private void Btnvxl6_Click(object sender, EventArgs e)
+        {
+            if (vxl6)
+            {
+                Btnvxl6.Text = "----";
+                vxl6 = false;
+                Change(13);
+            }
+            else
+            {
+                Btnvxl6.Text = @"\ \";
+                vxl6 = true;
+                Change(14);
+            }
+        }
+
+        private void Btnvxl8_Click(object sender, EventArgs e)
+        {
+            if (vxl8)
+            {
+                Btnvxl8.Text = "----";
+                vxl8 = false;
+                Change(18);
+            }
+            else
+            {
+                Btnvxl8.Text = @"\ \";
+                vxl8 = true;
+                Change(19);
+            }
+        }
+
+        private void Btnvxl7_Click(object sender, EventArgs e)
+        {
+            switch (vxl7)
+            {
+
+                case 1:
+                    Btnvxl7.Text = "/ /";
+                    vxl7 = 2;
+                    Change(15);
+                    break;
+                case 2:
+                    Btnvxl7.Text = @"\ \";
+                    vxl7 = 3;
+                    Change(16);
+                    break;
+                case 3:
+                    Btnvxl7.Text = "----";
+                    vxl7 = 1;
+                    Change(17);
+                    break;
+            }
 
         }
     }

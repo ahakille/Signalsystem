@@ -98,6 +98,7 @@
             this.Btnvxl6.TabIndex = 2;
             this.Btnvxl6.Text = "-----";
             this.Btnvxl6.UseVisualStyleBackColor = true;
+            this.Btnvxl6.Click += new System.EventHandler(this.Btnvxl6_Click);
             // 
             // Btnvxl8
             // 
@@ -107,6 +108,7 @@
             this.Btnvxl8.TabIndex = 2;
             this.Btnvxl8.Text = "-----";
             this.Btnvxl8.UseVisualStyleBackColor = true;
+            this.Btnvxl8.Click += new System.EventHandler(this.Btnvxl8_Click);
             // 
             // Btnvxl7
             // 
@@ -116,6 +118,7 @@
             this.Btnvxl7.TabIndex = 2;
             this.Btnvxl7.Text = "-----";
             this.Btnvxl7.UseVisualStyleBackColor = true;
+            this.Btnvxl7.Click += new System.EventHandler(this.Btnvxl7_Click);
             // 
             // Btnvxl3
             // 

@@ -16,5 +16,15 @@ namespace Signalsystem
         {
             InitializeComponent();
         }
+
+        private void BtnAbort_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
